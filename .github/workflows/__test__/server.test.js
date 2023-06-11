@@ -20,4 +20,8 @@ describe('server test' , () =>{
           const res = await req.get('/bad')
           expect(res.status).toBe(500)
      })
+     it('1 + 2' , () => {
+          
+          expect( 1 + 2 ).toBe(3)
+     })
 })
