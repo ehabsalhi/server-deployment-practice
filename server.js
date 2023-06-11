@@ -6,9 +6,6 @@ require('dotenv').config();
 
 app.use(cors())
 
-app.get ("/bad" , (req,res,next) => {
-     next({message : "test"})
-})
 
 
 app.get('/' ,date, (req , res) =>{
@@ -23,6 +20,11 @@ function date (req, res , next){
      next()
 }
 
+app.get ("/bad" , (req,res,next) => {
+     next({message : "test"})
+})
+
+
 
 const pageNotFound  = require('./middleware/404.js');
 const serverError = require("./middleware/500.js")
@@ -35,3 +37,5 @@ const port = process.env.PORT || 4000
 app.listen(port , () => {
      console.log('working in Port ',port);
 })
+
+module.exports = app;
