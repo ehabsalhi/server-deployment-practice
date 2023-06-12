@@ -13,11 +13,13 @@ describe('server test' , () =>{
 
      it('test Home page', async() =>{
           const res = await req.get('/')
-          expect(res.status).toBe(200)
+          expect(res.status).toBe(200);
+          
      })
 
      it('test 500 error' ,async () => {
           const res = await req.get('/bad')
-          expect(res.status).toBe(500)
+          expect(res.status).toBe(500);
+          
      })
 })
